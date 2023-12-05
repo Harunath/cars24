@@ -148,14 +148,17 @@ function Navbar() {
 		);
 	};
 	return (
-		<nav className="p-4">
+		<nav className=" absolute z-50 top-0 p-4 w-full h-[74px] bg-white bg-opacity-80">
 			<div className="flex items-center gap-x-4">
 				<Link href="/">
 					<div className=" text-2xl font-semibold">App Logo</div>
 				</Link>
 				<CitySelector />
+				<Link href="/buy">
+					<p className=" hover:underline font-semibold">Buy Used Car</p>
+				</Link>
 				<Link href="/sell">
-					<p className=" hover:underline">Sell</p>
+					<p className=" hover:underline font-semibold">Sell Used Car</p>
 				</Link>
 				<div className="grow shrink" />
 				<div

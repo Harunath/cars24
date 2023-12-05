@@ -20,7 +20,7 @@ const cities = [
 
 function CitySelector() {
 	const [isOpen, setIsOpen] = useState(false);
-	const [selectedCity, setSelectedCity] = useState("");
+	const [selectedCity, setSelectedCity] = useState("Hyderabad");
 
 	const toggleDropdown = () => {
 		setIsOpen(!isOpen);
@@ -38,7 +38,7 @@ function CitySelector() {
 				width="24"
 				height="24"
 				viewBox="0 0 24 24">
-				<path d="M12 14.172l-4.293-4.293-1.414 1.414L12 16l5.707-5.707-1.414-1.414z" />
+				<polygon points="12 19.172 16.828 13.344 7.172 13.344" />
 			</svg>
 		);
 	};
@@ -50,7 +50,7 @@ function CitySelector() {
 				width="24"
 				height="24"
 				viewBox="0 0 24 24">
-				<path d="M12 14.172l-4.293-4.293-1.414 1.414L12 16l5.707-5.707-1.414-1.414z" />
+				<polygon points="12 4.828 16.828 10.656 7.172 10.656" />
 			</svg>
 		);
 	};
