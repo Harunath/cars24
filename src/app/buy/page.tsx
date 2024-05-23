@@ -1,5 +1,5 @@
 import React from "react";
-import PopularCars from "../components/popularCars";
+import PopularCars from "@/app/components/PopularCars";
 
 function Buy() {
 	return (
