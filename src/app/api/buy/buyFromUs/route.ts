@@ -1,12 +1,19 @@
-import buyCar from "../../../models/buyCarModel";
-import connect from "../../../dbConfig/dbConfig";
+import buyCar from "@/app/models/buyCarModel";
+import connect from "@/app/dbConfig/dbConfig";
 import { NextRequest, NextResponse } from "next/server";
+
+interface CarData {
+	carNumber: string;
+	carName: string;
+	brand: string;
+	price: number;
+}
 
 connect();
 
 export async function POST(request: NextRequest) {
 	try {
-		const { carNumber, carName, brand, price } = await request.json();
+		const { carNumber, carName, brand, price }: CarData = await request.json();
 
 		let car = await buyCar.findOne({ carNumber });
 		if (car)
@@ -17,7 +24,7 @@ export async function POST(request: NextRequest) {
 			brand,
 			price,
 		});
-		car = await newCar.save({ carNumber, carName, brand, price });
+		car = await newCar.save();
 	} catch (error) {
 		return NextResponse.json({ msg: "Something went wrong" }, { status: 500 });
 	}
